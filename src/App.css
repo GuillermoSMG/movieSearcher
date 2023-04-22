@@ -41,4 +41,5 @@ form {
 .movie img {
   margin-top: 1rem;
   border-radius: 1rem;
+  min-height: 350px;
 }

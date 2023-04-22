@@ -10,11 +10,11 @@ export const searchMovies = async ({ search }) => {
     const json = await response.json()
     const movies = json.Search
 
-    return movies?.map(movie => ({
-      id: movie.imdbID,
-      title: movie.Title,
-      year: movie.Year,
-      poster: movie.Poster
+    return movies?.map(({ imdbID, Title, Year, Poster }) => ({
+      id: imdbID,
+      title: Title,
+      year: Year,
+      poster: Poster === 'N/A' ? 'https://media.comicbook.com/files/img/default-movie.png' : Poster
     }))
   } catch (err) {
     throw new Error('Error searching movies.')
