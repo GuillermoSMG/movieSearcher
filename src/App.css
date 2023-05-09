@@ -7,14 +7,15 @@
   align-items: center;
 }
 
-main {
+
+.main {
   display: flex;
   width: 100%;
   justify-content: center;
   margin-top: 2rem;
 }
 
-form {
+.form {
   align-items: center;
   display: flex;
   justify-content: center;
@@ -32,13 +33,19 @@ form {
 
 .movie {
   text-align: center;
+  transition: transform ease .3s;
+  cursor: pointer;
 }
 
-.movie h3, .movie p {
+.movie:hover {
+  transform: scale(1.1);
+}
+
+.movie-title, .movie-year {
   margin: 0;
 }
 
-.movie img {
+.movie.poster {
   margin-top: 1rem;
   border-radius: 1rem;
   min-height: 350px;

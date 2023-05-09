@@ -1,9 +1,9 @@
+import debounce from 'just-debounce-it'
 import { useCallback, useState } from 'react'
 import './App.css'
-import debounce from 'just-debounce-it'
 
-import Movies from './components/Movies'
-
+import Feed from './components/Feed'
+import Header from './components/Header'
 import { useMovies } from './hooks/useMovies'
 import { useSearch } from './hooks/useSearch'
 
@@ -31,25 +31,8 @@ function App () {
 
   return (
     <div className='page'>
-      <header>
-        <h1>Movie searcher</h1>
-        <form onSubmit={handleSubmit}>
-          <input name='query' value={search} onChange={handleChange} placeholder='Spiderman, Interestellar, Origin...' />
-          <input type='checkbox' onChange={handleSort} checked={sort} />
-          <button>Search</button>
-        </form>
-        {err && <p style={{ color: 'red' }}>{err}</p>}
-      </header>
-      <main>
-        {
-          loading
-            ? <p>Loading...</p>
-            : <Movies movies={movies} />
-        }
-        {
-          error && <p>{error}</p>
-        }
-      </main>
+      <Header handleChange={handleChange} handleSort={handleSort} handleSubmit={handleSubmit} sort={sort} err={err} search={search} />
+      <Feed movies={movies} loading={loading} error={error} />
     </div>
   )
 }

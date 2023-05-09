@@ -1,3 +1,5 @@
+import MovieCard from './MovieCard'
+
 function Movies ({ movies }) {
   const hasMovies = movies?.length > 0
 
@@ -8,11 +10,7 @@ function Movies ({ movies }) {
             ? (
               <ul className='movies'>
                 {movies?.map(movie => (
-                  <li className='movie' key={movie?.id}>
-                    <h3>{movie?.title}</h3>
-                    <p>{movie?.year}</p>
-                    <img src={movie?.poster} alt={movie?.title} />
-                  </li>
+                  <MovieCard key={movie?.id} movie={movie} />
                 ))}
               </ul>
               )
