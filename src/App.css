@@ -7,7 +7,6 @@
   align-items: center;
 }
 
-
 .main {
   display: flex;
   width: 100%;
@@ -33,7 +32,7 @@
 
 .movie {
   text-align: center;
-  transition: transform ease .3s;
+  transition: transform ease 0.3s;
   cursor: pointer;
 }
 
@@ -41,7 +40,8 @@
   transform: scale(1.1);
 }
 
-.movie-title, .movie-year {
+.movie-title,
+.movie-year {
   margin: 0;
 }
 
@@ -49,4 +49,8 @@
   margin-top: 1rem;
   border-radius: 1rem;
   min-height: 350px;
+}
+
+.sort-label {
+  cursor: pointer;
 }
